@@ -98,11 +98,11 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: University of São Paulo
+        title: Institute for Technological Research
         caption: 2004 - 2009
         sub_title: MSc Computer Engineering
         quote: >
-          Established in 1934, University of São Paulo is the largest Brazilian public university and one of the country's most prestigious educational institutions.
+          One of the largest research institutes in Brazil, IPT has qualified laboratories and a team of highly qualified researchers and technicians, basically working in four major areas – innovation, research & development; technological services; metrology development & support, and technology information & education.
         description: | # this will include new lines to allow paragraphs
           Focused on software architecture, ISO9126, SEI's ATAM and RM ODP.
 
@@ -112,8 +112,6 @@ content:
         sub_title: BSc Mathematics
         quote: >
           Established in 1934, University of São Paulo is the largest Brazilian public university and one of the country's most prestigious educational institutions.
-        description: | # this will include new lines to allow paragraphs
-          Focused on software architecture, ISO9126, SEI's ATAM and RM ODP.
 
   - title: A Little More About Me
     layout: text
