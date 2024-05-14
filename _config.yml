@@ -106,6 +106,15 @@ content:
         description: | # this will include new lines to allow paragraphs
           Focused on software architecture, ISO9126, SEI's ATAM and RM ODP.
 
+      - layout: left
+        title: University of São Paulo
+        caption: 2000 - 2003
+        sub_title: BSc Mathematics
+        quote: >
+          Established in 1934, University of São Paulo is the largest Brazilian public university and one of the country's most prestigious educational institutions.
+        description: | # this will include new lines to allow paragraphs
+          Focused on software architecture, ISO9126, SEI's ATAM and RM ODP.
+
   - title: A Little More About Me
     layout: text
     content: | # this will include new lines to allow paragraphs
