@@ -28,10 +28,10 @@ linkedin_username: paulo-henrique-fonseca-rebelo
 # orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
-additional_links:
-- title: itsgoingto.be
-  icon: fas fa-globe
-  url: https://www.itsgoingto.be
+#additional_links:
+#- title: itsgoingto.be
+#  icon: fas fa-globe
+#  url: https://www.itsgoingto.be
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
 #   url: Link url (eg. https://google.com)
@@ -83,10 +83,15 @@ content:
           Trellix (formerly FireEye and McAfee Enterprise) is a privately held cybersecurity company that was founded in 2022.
         description: | # this will include new lines to allow paragraphs
             Managed the Data Security and Public Sector portfolios end-to-end, from concept to launch, to achieve the strategic vision and business outcomes and strengthen enterprise security posture.
+            
             •	Launched multiple highly complex solutions with stringent government security regulations, partnering with 20+ global cross-functional teams, advancing customers into the secure digital age of tomorrow.
+            
             •	Optimized the implementation of on-premise and SaaS feature parities in AWS, meeting customer needs and increasing product adoption by 25%. 
+            
             •	Delivered a high-performance, scalable DLP solution for Chrome Enterprise that features robust API-based security, effortless deployment, and centralized management. It allowed the establishment of a new partnership with Google. 
+            
             •	Established a world-class center of program excellence by focusing on delivering and optimizing agile/SDLC and high-quality, metrics-driven end-to-end program execution. Adopted Smartsheet and leveraged Jira. 
+            
             •	Led the initiative to create AWS' initial capacity planning tool for Compute, RDS+Aurora, and Storage. This function streamlined resource allocation for critical cloud services, resulting in a 15% cost reduction.
 
   - title: Education # Title for the section
