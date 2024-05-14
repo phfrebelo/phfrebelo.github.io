@@ -6,10 +6,10 @@ favicon: images/favicon.ico
 version: 2
 
 # Personal info
-name: Brett Harris
-title: Senior Network System Administrator
-email: brett.h@email.co.uk
-website: www.github.com/sproogen/resume-theme
+name: Paulo Rebelo
+title: Senior Technical Program Manager
+email: phfrebelo@gmail.com
+website: www.github.com/phfrebelo
 
 # Dark Mode (true/false/never)
 darkmode: false
