@@ -113,19 +113,20 @@ content:
         quote: >
           Established in 1934, University of São Paulo is the largest Brazilian public university and one of the country's most prestigious educational institutions.
 
-  - slides:
-    - image: image1.jpg
-      title: "Recommendation 1 Title"
-      text: "Excerpt from the first recommendation."
-      author: "Recommender 1 Name"
-    - image: image2.jpg
-      title: "Recommendation 2 Title"
-      text: "Excerpt from the second recommendation."
-      author: "Recommender 2 Name"
-    - image: image3.jpg 
-      title: "Recommendation 3 Title"
-      text: "Excerpt from the third recommendation."
-      author: "Recommender 3 Name"
+  - title: Testimonies # Title for the section
+    slides:
+      - image: image1.jpg
+        title: "Recommendation 1 Title"
+        text: "Excerpt from the first recommendation."
+        author: "Recommender 1 Name"
+      - image: image2.jpg
+        title: "Recommendation 2 Title"
+        text: "Excerpt from the second recommendation."
+        author: "Recommender 2 Name"
+      - image: image3.jpg 
+        title: "Recommendation 3 Title"
+        text: "Excerpt from the third recommendation."
+        author: "Recommender 3 Name"
 
   - title: A Little More About Me
     layout: text
