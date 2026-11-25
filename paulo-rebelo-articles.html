@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Articles by Paulo Rebelo — the full text of recent LinkedIn posts and LinkedIn articles on FedRAMP and AI governance, decision velocity, AI and technical leadership, the AI capex-to-revenue gap, and building AI agents for production." />
+<link rel="icon" href="data:," />
+<title>Paulo Rebelo — Articles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f3f4f1;
+    --bg-card:#ffffff;
+    --ink:#131816;
+    --ink-2:#3d4742;
+    --ink-3:#6b7771;
+    --line:#dde2dd;
+    --line-strong:#b9c2ba;
+    --accent:#0b5a4a;
+    --accent-ink:#ffffff;
+    --accent-soft:#e6f0ec;
+    --shadow:0 1px 2px rgba(19,24,22,.05),0 12px 32px rgba(19,24,22,.06);
+    --radius:10px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#101312;
+      --bg-soft:#171b19;
+      --bg-card:#171b19;
+      --ink:#eef1ee;
+      --ink-2:#c3ccc6;
+      --ink-3:#8f9b93;
+      --line:#2a322d;
+      --line-strong:#3d4740;
+      --accent:#5ec9ae;
+      --accent-ink:#0b1713;
+      --accent-soft:#1c2f29;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,Segoe UI,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{text-decoration-thickness:2px}
+  ::selection{background:var(--accent);color:var(--accent-ink)}
+
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.wrap{padding:0 18px}}
+
+  /* Nav */
+  .topnav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topnav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:58px}
+  .brand{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap;padding:10px 0}
+  .brand span{color:var(--accent)}
+  .backlink{display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);text-decoration:none;font-size:.86rem;font-weight:500;padding:10px 10px;min-height:44px;border-radius:6px}
+  .backlink:hover{color:var(--ink);background:var(--bg-soft)}
+  .backlink svg{width:15px;height:15px;flex:none}
+  @media(max-width:760px){
+    .topnav-inner{flex-direction:column;align-items:flex-start;gap:0;padding-top:8px;padding-bottom:8px;min-height:0}
+    .brand{font-size:.78rem;padding:6px 0 2px}
+    .backlink{margin-left:-10px;padding:8px 10px;font-size:.82rem;min-height:40px}
+  }
+
+  /* Page header */
+  .page-head{padding:64px 0 0}
+  @media(max-width:640px){.page-head{padding:40px 0 0}}
+  .page-head h1{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:clamp(2.6rem,6.2vw,4.2rem);line-height:1.02;letter-spacing:-.015em;margin:0 0 14px}
+  .page-head h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .page-lede{font-size:clamp(1.05rem,2vw,1.22rem);line-height:1.55;color:var(--ink-2);max-width:44em;margin:0}
+  .head-rule{border-top:2px solid var(--ink);margin-top:44px}
+
+  /* Articles */
+  .articles{padding:44px 0 76px}
+  .article{border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-card);box-shadow:var(--shadow);margin-bottom:22px;overflow:hidden}
+  .article-body{padding:30px 32px 28px}
+  @media(max-width:640px){.article-body{padding:22px 20px 20px}}
+  .article-kicker{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:4px 8px}
+  .article-date{font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .tag-format{color:var(--ink-2);background:transparent;border:1px solid var(--line-strong)}
+  .article-title{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1.15;letter-spacing:-.01em;margin:0 0 18px;max-width:22em}
+  .article-text{max-width:44em}
+  .article-text p{margin:0 0 16px;color:var(--ink);font-size:1.02rem;line-height:1.7}
+  .article-text p:last-child{margin-bottom:0}
+  .article-text p.hashtags{color:var(--accent);font-weight:500}
+  .article-text h3{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:1.42rem;line-height:1.25;letter-spacing:-.005em;color:var(--ink);margin:34px 0 14px}
+  .article-text h3:first-child{margin-top:0}
+  .article-text h4{font-family:"Public Sans",system-ui,sans-serif;font-weight:700;font-size:1.05rem;line-height:1.35;color:var(--ink);margin:26px 0 12px}
+  .article-text ul,.article-text ol{margin:0 0 16px;padding-left:1.4em;color:var(--ink);font-size:1.02rem;line-height:1.7}
+  .article-text li{margin-bottom:10px}
+  .article-text li:last-child{margin-bottom:0}
+  .article-text li p{margin:0 0 10px}
+  .article-text li p:last-child{margin-bottom:0}
+  .article-foot{border-top:1px dashed var(--line-strong);margin-top:24px;padding-top:20px}
+  .linkedin-link{display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:12px 20px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);transition:background .15s ease,color .15s ease}
+  .linkedin-link:hover{background:color-mix(in srgb,var(--accent) 88%, black);color:var(--accent-ink)}
+  @media(prefers-color-scheme:dark){.linkedin-link:hover{background:color-mix(in srgb,var(--accent) 88%, white)}}
+  .linkedin-link svg{width:16px;height:16px;flex:none}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:28px 0 44px}
+  .foot-inner{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+  .foot-name{font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .foot-links{display:flex;flex-wrap:wrap;gap:4px}
+  .foot-links a{color:var(--ink-2);text-decoration:none;font-size:.86rem;font-weight:500;padding:10px;min-height:44px;display:inline-flex;align-items:center;border-radius:6px}
+  .foot-links a:hover{color:var(--ink);background:var(--bg-soft)}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="brand" href="https://phfrebelo.github.io/">Paulo <span>Rebelo</span></a>
+    <a class="backlink" href="https://phfrebelo.github.io/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Back to portfolio
+    </a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Articles</h1>
+    <p class="page-lede">Writing from my LinkedIn — the full text of my recent posts and LinkedIn articles, with a link to each one on LinkedIn.</p>
+    <div class="head-rule"></div>
+  </div>
+
+  <div class="articles">
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">FedRAMP &amp; AI governance</span>
+          <span class="article-date">November 24, 2026</span>
+        </div>
+        <div class="article-text">
+          <p>FedRAMP taught me something most AI teams are about to learn the hard way: authorization is not a gate at the end. It is a program that runs alongside delivery.</p>
+          <p>At Trellix, I owned the certification and compliance programs, FedRAMP, DoD, IPv6, that gated over $400M in federal revenue. No authorization, no bid. The lesson was not about paperwork. It was that a control designed in from the start costs a fraction of one retrofitted after the build, when the architecture is already set and the answers are expensive.</p>
+          <p>The same pattern is showing up in AI now. Teams ship the model, then discover the governance questions: what data trained it, who can see the outputs, what happens when it fails inside a regulated environment. By then, the rework is the project.</p>
+          <p>In the agentic SDLC work I lead now, we are building it the other way around. Human gates are built into the harness, not written in a prompt. The checkpoint is part of the workflow, not a meeting after it.</p>
+          <p>The teams that win in regulated AI will not be the ones that move fastest. They will be the ones whose governance moves at the same speed as their delivery.</p>
+          <p class="hashtags">#TechnicalProgramManagement #AIGovernance #FedRAMP #AgenticAI</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7531025595229425664/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">Decision velocity</span>
+          <span class="article-date">November 18, 2026</span>
+        </div>
+        <div class="article-text">
+          <p>Speed in program delivery isn't about working faster. It's about deciding faster.</p>
+          <p>I stood up a portfolio command center in hours — not because I rushed, but because every decision had an owner, a date, and a single log to live in.</p>
+          <p>Decisions didn't wait for the next steering committee. They were made, logged, and moved on.</p>
+          <p>That log is a repo, not a slide deck. Thirteen folders: command center, RAID, decisions, roadmap, stakeholders, delivery model, policies. Every decision, action, and open question lives in exactly one place — and an AI agent helps me keep it that way.</p>
+          <p>Last week alone I sent 2,600 requests to Claude from VS Code — 21.8 active hours across 6 days, 90% cache reuse. The agent drafts, I decide.</p>
+          <p>The programs that stall aren't short on effort. They're short on decision velocity. Where do decisions go to wait in your organization?</p>
+          <p class="hashtags">#TechnicalProgramManagement #AgenticAI #ProgramManagement #ClaudeCode</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7528850363781894144/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">AI and technical leadership</span>
+          <span class="article-date">October 28, 2026</span>
+        </div>
+        <div class="article-text">
+          <p>AI is raising the bar for technical leadership. People management alone is no longer enough.<br>
+          An article featuring Airbnb CEO Brian Chesky makes a timely argument: leaders need to stay directly connected to the work, and professionals need to keep adapting.</p>
+          <p>My takeaway for TPM Leaders, Heads of PMO, and Engineering Leads: technical fluency should be a core leadership competency.</p>
+          <p>People leadership remains essential. Empathy, coaching, and trust help teams succeed. Technical depth strengthens that leadership by helping us ask better questions, challenge assumptions, and make informed decisions.</p>
+          <p>What does that look like in practice?</p>
+          <p>• TPM Leaders: Understand architecture, APIs, data flows, and dependencies well enough to identify risks that a green status report can hide.<br>
+          • Heads of PMO: Connect investment and governance decisions to technical feasibility, AI readiness, and measurable business outcomes.<br>
+          • Engineering Leads: Stay close to design decisions, code quality, reliability, and the evaluation of AI-generated work.</p>
+          <p>The depth will differ by role. Every leader should understand enough to engage meaningfully with the decisions their teams face.</p>
+          <p>For AI initiatives, that means being able to ask:<br>
+          — How will we know the output is trustworthy?<br>
+          — What data can the system access?<br>
+          — What happens when it fails?<br>
+          — Where is human review necessary?<br>
+          — Does the benefit justify the cost and complexity?</p>
+          <p>It also means using the tools ourselves: experimenting, building small prototypes, and learning where AI helps and where it struggles.</p>
+          <p>My view: the strongest leaders will combine people leadership, technical judgment, and business accountability.</p>
+          <p>As our teams adopt AI, our own learning needs to keep pace.</p>
+          <p>How are you staying technically engaged as a leader?</p>
+          <p class="hashtags">#TechnicalLeadership #TechnicalProgramManagement #PMO #EngineeringLeadership #AI</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7521346920829796352/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">AI economics &amp; the TPM profession</span>
+          <span class="tag tag-format">LinkedIn article</span>
+          <span class="article-date">July 29, 2026</span>
+        </div>
+        <h2 class="article-title">The one problem on every CEO's desk right now</h2>
+        <div class="article-text">
+          <p>I've spent fifteen years running technical programs — payments platforms, post-merger integrations, cloud cost work, and lately AI systems. I've watched the definition of my own job change underneath me more than once. This is the sharpest turn I've seen, and I don't think enough of us have noticed it happening.</p>
+          <p>It starts with a single question that every CEO in tech is now being asked to answer.</p>
+          <p>It isn't 'should we do AI.' That argument ended.</p>
+          <p>It's the capex-to-revenue gap.</p>
+          <p>The five largest hyperscalers are spending somewhere between $700B and $900B on capital expenditure in 2026. Amazon around $200B, Google $185B, Meta $125B, Microsoft $120B.</p>
+          <p>Capex is now consuming roughly 94% of operating cash flow after dividends and buybacks, and it's increasingly debt-funded rather than paid for out of surplus cash. Meanwhile:</p>
+          <p>Direct AI revenue remains a small fraction of what's going into the infrastructure. Markets have started repricing on exactly this — rotating away from companies where capex is debt-funded and operating earnings are under pressure.</p>
+          <p>I want to be fair to the other side of this argument, because it's a real one. Infrastructure has always been built ahead of the revenue that eventually uses it. Railroads, fiber, cloud itself. Nobody expects a data center to pay for itself in the quarter it's energized. And being short on compute is the one mistake none of these companies can afford — which is precisely why they're all spending at once.</p>
+          <p>But two things about this cycle are different. Debt has a schedule in a way that surplus cash does not. And the market has stopped granting patience for free.</p>
+          <p>At the same time, 45% of CEOs are holding headcount flat over the next one to two years — up fourteen points in a single year — and 29% are cutting by more than 5%.</p>
+          <p>The specifics are sharper than the aggregate. Andy Jassy has been explicit about raising Amazon's individual-contributor-to-manager ratio, and has described bureaucracy as anathema to the kind of company he wants Amazon to be. ServiceNow's Bill McDermott plans to enter 2027 with roughly the same headcount he started 2026 with, absorbing acquisitions through AI-driven productivity instead of hiring. Gartner expects one in five organizations to use AI to flatten structure, eliminating more than half of current middle management roles.</p>
+          <p>Put those together and the ask is brutally simple: convert an enormous fixed AI investment into gross margin and revenue, faster, with fewer people and fewer layers.</p>
+          <p>That's the job. Everything below is downstream of it.</p>
+          <h3>What this does to my profession</h3>
+          <p>It splits it in two.</p>
+          <p>The TPM being deleted is the coordination layer — the person who runs the status meeting, maintains Jira hygiene, chases updates, and produces the weekly exec deck. That work is being automated, and it also happens to sit in exactly the layer Jassy and Gartner are describing.</p>
+          <p>I'll be blunt about this, including about myself. If your résumé reads as 'drove alignment across stakeholders,' you are describing the role being cut. I had 'leading 5–10 concurrent programs' on mine for years before it occurred to me that this is a workload metric wearing an achievement costume. It says how much I was juggling. It says nothing about what came out the other end.</p>
+          <p>The TPM being hired owns a P&amp;L-adjacent outcome. Three archetypes are actually getting funded.</p>
+          <p>AI infrastructure and platform. GPU and inference capacity planning, utilization, cost-per-token curves, enterprise readiness of model-serving platforms. You sit directly on the capex ROI line — the most measurable place to stand right now.</p>
+          <p>AI product delivery. Shipping agentic features into production and owning the failure surface almost nobody has built for yet: eval regressions, hallucination rates, model-version drift, audit trails, high-risk-AI regulatory classification. The question underneath all of it is what 'done' means when the output is probabilistic. Almost nobody has answered that well. It's the least crowded, highest-leverage lane I've seen in years.</p>
+          <p>AI-native operations. Redesigning how the organization itself delivers, with agents doing real chunks of the work. Not 'we adopted Copilot.' Actually re-cutting the delivery system so sixty people ship what a hundred used to.</p>
+          <p>Jensen Huang's framing at Nvidia is useful here: engineers building agents beats engineers writing code. The same inversion applies to those of us who run programs. Orchestrating agents and systems beats orchestrating people's calendars.</p>
+          <h3>The metrics CFOs actually repeat</h3>
+          <p>On-time delivery is an internal hygiene metric. It matters, but no CFO has ever repeated it on an earnings call. What travels upward is narrower than most of us were trained to report.</p>
+          <p>On cost. Cost per unit of the thing — per transaction, per inference, per resolved ticket, per story point of engineering capacity. A 40% inference cost reduction on a growing product is a gross-margin story. Revenue per employee sits here too; it's the cleanest available proxy for the AI productivity thesis. So does accelerator utilization, because idle capacity is the most expensive thing in tech right now.</p>
+          <p>On speed. Cycle time from concept to production, stated in the unit that matters — weeks instead of quarters. In a capex-heavy year, every quarter a launch slips is a quarter of depreciation with no revenue against it. Pair it with change failure rate, because velocity that creates rework doesn't count.</p>
+          <p>On revenue. Adoption of AI features into the existing base. Time-to-first-value for enterprise customers. Deals unblocked because a compliance, latency or reliability barrier finally came down.</p>
+          <p>On capital. Programs killed. Genuinely. Stopping an initiative that wasn't going to return, and redeploying those engineers somewhere that would, tells a leader you can be trusted with capital and not just with schedules. Almost nobody writes this down, which is exactly why it's persuasive.</p>
+          <h3>How this actually makes shareholders happy</h3>
+          <p>Three levers, in rough order of how much CEOs currently care.</p>
+          <p>Make the compute pay. Anything that raises utilization or lowers cost per inference converts sunk capex into margin. This is the most directly valued work in the industry right now.</p>
+          <p>Compress time-to-revenue. Shipping two quarters early on a $30M ARR product is worth more than an entire TPM organization's salary line.</p>
+          <p>Absorb growth without headcount. If the company grows 25% and adds 3% headcount because you redesigned the delivery system, you have personally produced the operating leverage the CEO promised investors.</p>
+          <p>And a quieter fourth one I'd rank above all of them: be the person who can tell the CEO the truth about which AI bets are working. Most organizations cannot currently answer 'what did our AI investment return' with real numbers — not because nobody cares, but because nobody built the measurement layer. Whoever builds it becomes very difficult to remove.</p>
+          <h3>Where I've landed</h3>
+          <p>None of this is a story about AI replacing people. I think that framing is lazy and mostly wrong.</p>
+          <p>It's a story about a bill coming due, and about which work is visibly on the return side of it. In a flat-headcount year, what gets protected is the work someone can point at and say: that lowered our cost to serve, or that made the platform sellable in a market we couldn't enter before, or that stopped us spending twelve million on something that was never going to land.</p>
+          <p>What gets absorbed is the work that only ever shows up as coordination.</p>
+          <p>That distinction has always existed. What's changed is that the gap between spending and returns is now large enough, public enough and debt-funded enough that none of us gets to be vague about which side we're on.</p>
+          <p>If you're wondering what to focus on over the next twelve months, I wouldn't start with a new framework or another certification. I'd start with one uncomfortable question:</p>
+          <p>Can you point at a number that moved, and explain exactly how you moved it?</p>
+          <p>If you can, you're on the right side of this. If you can't, that's the work.</p>
+          <p>Curious where others land on this — particularly anyone already running AI infrastructure or agentic delivery programs. Which of the three lanes is your organization actually funding?</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/pulse/one-problem-every-ceos-desk-right-now-paulo-rebelo-fneoc/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">AI agent architecture</span>
+          <span class="tag tag-format">LinkedIn article</span>
+          <span class="article-date">July 23, 2026</span>
+        </div>
+        <h2 class="article-title">Building AI Agents That Survive Production</h2>
+        <div class="article-text">
+          <p>Most agent prototypes look impressive in a demo and fall over within days of handling real traffic. The gap isn't usually about the model; it's architectural. A production-grade agent is mostly ordinary, deterministic software, with the model called in at a small number of well-chosen decision points rather than left to run the whole show.</p>
+          <p>This piece walks through the core architecture patterns that actually hold up under real load, why each one matters, and where the field still disagrees. It draws on the public '12-Factor Agents' principles [1], Anthropic's own writing on effective agent design [2, 3], and a handful of well-documented production incidents, with full sources at the end.</p>
+          <h3>1. The Agent Loop, Stripped Down</h3>
+          <p>At its simplest, an agent is a loop: the model receives context, returns a decision as structured output (JSON, not prose), code executes that decision, appends the result back into the context, and the cycle repeats until a stop condition is met.</p>
+          <p>The critical mental model: the LLM is a pure function that starts fresh every call. It has no memory of its own; it only knows what's in the context window handed to it that turn. Everything durable has to live outside the model.</p>
+          <p>This loop is enough to win a demo. It's also exactly where things start to break once real users and real data show up.</p>
+          <h4>Why the naive loop fails at scale</h4>
+          <ul>
+            <li>
+              <p>Compounding error. If each step is 95% reliable and you chain 20 of them, the odds all 20 succeed drop to roughly 36%. Reliability that looks fine per-step collapses across a long autonomous chain.</p>
+            </li>
+            <li>
+              <p>Confident hallucination reaching users. A support agent that invents a policy, or a chatbot that promises a refund the company never offered, isn't a bug users shrug off; it's a liability. In 2025, Cursor's AI support bot fabricated a device-limit policy that never existed, triggering a wave of subscription cancellations before the company could correct the record [8]. A year earlier, Air Canada's chatbot invented a bereavement-fare policy, and a tribunal ordered the airline to honor it anyway, rejecting the argument that the bot was a 'separate legal entity' [9]. Neither incident is hypothetical.</p>
+            </li>
+            <li>
+              <p>Runaway loops. Without a hard stop, a stuck agent just keeps calling the model and burning tokens indefinitely.</p>
+            </li>
+            <li>
+              <p>Lost state. If the 'plan' only exists inside one model context, a crash or a long task mid-flight loses everything.</p>
+            </li>
+          </ul>
+          <p>Each of these maps to a specific architectural fix.</p>
+          <h3>2. Context Engineering: Decide What the Model Sees, on Purpose</h3>
+          <p>The context window is the model's entire working memory for that call. Its contents are a design decision, not an afterthought.</p>
+          <p>Treat prompts as code. Version them, review them, test them. Frameworks that auto-generate prompts behind the scenes are convenient right up until behavior shifts, and you can't find out why.</p>
+          <p>Prune aggressively. A focused, relevant context consistently outperforms a large context stuffed with loosely related history; quality degrades as the window fills with marginal material. Give each step exactly what it needs, not the entire run history.</p>
+          <p>Design tool schemas like an API contract. A tool is a function description plus an input schema. Vague names and loose parameter descriptions are one of the most common causes of wrong-tool selection; tightening a schema often fixes more behavior than tweaking the prompt.</p>
+          <h3>3. Control Flow Belongs to Deterministic Code</h3>
+          <p>The single biggest reliability lever: the surrounding code decides when the model runs and when the loop ends, not the model itself.</p>
+          <p>Picture the overall system as ordinary application logic: sequential steps, conditionals, calls to external systems. At two or three points where a decision genuinely requires judgment, the code calls the model. Everywhere else, deterministic logic handles it; it's cheaper, predictable, and testable.</p>
+          <p>Two non-negotiable rules:</p>
+          <ol>
+            <li>Every loop needs an escape hatch: an iteration cap, a timeout, and explicit completion conditions, so the agent halts even if the model would happily continue forever.</li>
+            <li>Invoke the model on purpose, not by default. Reserve it for genuinely open-ended reasoning; let ordinary code handle anything that can be specified in advance.</li>
+          </ol>
+          <p>The pattern shows up at scale in production customer-service systems. Intercom's Fin 3, for instance, layers deterministic conditional steps and code snippets on top of natural-language reasoning, plus explicit checkpoints where the agent pauses for human approval before a sensitive action [5].</p>
+          <p>Start with the simplest version that solves the problem. Add model-driven autonomy only where simpler logic genuinely falls short.</p>
+          <h3>4. Externalize State - Keep the Model Stateless</h3>
+          <p>If the model starts fresh every call, then somewhere has to own the real state of the work: the plan, the progress, the conversation so far. That somewhere is application storage, not the model's context.</p>
+          <p>The application reconstructs the context from stored state on every call, rather than trusting the model to 'remember.' Because the state lives in serializable storage, an agent can pause mid-task and resume later, or recover cleanly after a crash, just by reloading the saved state.</p>
+          <p>This buys two things beyond crash recovery:</p>
+          <ul>
+            <li>
+              <p>Consistency. Keeping the model's view of the world aligned with the application's ground truth (an actual database, not a stale summary) prevents it from acting on outdated information.</p>
+            </li>
+            <li>
+              <p>Horizontal scale. When state lives entirely outside the model, any running instance can pick up any request — because everything needed travels with the context. That's what lets you run many workers behind a load balancer instead of pinning a task to one long-lived process.</p>
+            </li>
+          </ul>
+          <p>Think of the model as a pure function: (current_state, new_event) → (next_state, action). Same inputs, same outputs, which is also what makes the whole system testable.</p>
+          <h3>5. Scope: Narrow Agents, Supervised Handoffs</h3>
+          <p>The last big lever is how much any single agent is asked to own.</p>
+          <p>Prefer several narrow, single-purpose agents over one broad agent doing everything. A narrow agent has a smaller failure surface, easier to test, easier to reason about, easier to fix. When a task genuinely spans multiple distinct jobs, compose several narrow agents under deterministic orchestration rather than expanding one agent's responsibility list.</p>
+          <p>Klarna's AI assistant illustrates both the payoff and the risk of getting scope wrong. In its first month, it handled 2.3 million conversations, about two-thirds of Klarna's customer service volume, with resolution times cut from 11 minutes to under 2 [7]. But by mid-2025, Klarna's CEO acknowledged the automation had gone further than it should have and began rehiring human agents so customers could always reach a person. The technology worked; the scope decision needed revisiting. That's exactly the argument for designing the human handoff deliberately, rather than treating full automation as the end state.</p>
+          <p>Design the human handoff as a first-class path, not a failure state. Trigger it deliberately: sensitive action, low confidence, explicit user request for a person, and hand off with enough state that the human doesn't have to reconstruct context from scratch.</p>
+          <p>Note what's not in that diagram: sub-agents talking to each other directly. Peer-to-peer coordination between autonomous sub-agents tends to produce conflicting decisions. A single orchestrator that owns the full context and dispatches short-lived, narrow sub-agents, each returning a summary rather than continuing to chat, has proven far more stable in practice.</p>
+          <h3>6. Practices the Core Framework Doesn't Cover</h3>
+          <p>The four areas above (context, control flow, state, scope) get an agent to 'reliable.' A few more habits get it to 'operable':</p>
+          <p>Observability and tracing. Log every model call's full input and output, every tool invocation and its result, and every state transition. When an agent misbehaves in production, you need to replay exactly what it saw, not guess from a support ticket.</p>
+          <p>Evaluation as a first-class artifact. Build a regression test set of representative inputs and expected behaviors before you need it, and re-run it on every prompt or model change. Vibes-based prompt tuning doesn't scale past a handful of test cases.</p>
+          <p>Least-privilege tool permissions. Scope each tool's blast radius deliberately; a 'send email' tool shouldn't also be able to delete records. This matters even more once you consider prompt injection: content the model reads (a webpage, a document, an email) can attempt to smuggle in instructions, so treat retrieved content as untrusted input, not as trusted context.</p>
+          <p>Cost as a design constraint, not an afterthought. Autonomy is expensive: more tool calls, more reasoning tokens, sometimes an order of magnitude more than a simpler deterministic path. Reserve the expensive, more autonomous configuration for the tasks where the value clearly justifies it.</p>
+          <h3>7. Where the Field Still Disagrees</h3>
+          <p>Single agent vs. multi-agent. Cognition's 'Don't Build Multi-Agents' argues that parallel sub-agents making independent decisions tend to conflict with each other, since actions carry implicit assumptions that sibling agents can't see [4]. Anthropic's own multi-agent research system tells the other side of the story: it beat a single-agent baseline by a wide margin on certain research tasks, at roughly 15x the token cost [3]. The pattern that seems to reconcile both: a single orchestrator holding full context, dispatching isolated, short-lived sub-agents that report back with summaries, avoids the conflict problem while still capturing the parallelism benefit.</p>
+          <p>The Bitter Lesson question. Richard Sutton's essay argues that general methods which scale with compute have consistently beaten hand-crafted, domain-specific techniques over 70 years of AI research [6]. Applied here, it suggests some of today's scaffolding will become unnecessary as models improve. But some constraints are structural, not a model-capability gap: a finite context window, the need to keep facts consistent across a long document, the requirement to pause and resume safely. Those don't disappear just because the model gets smarter.</p>
+          <h3>A Practical Checklist</h3>
+          <ul>
+            <li>Prompts live in version control, not buried in a framework</li>
+            <li>Context is pruned to what the current step needs, not the full history</li>
+            <li>Tool schemas are precise enough that a human could pick the right tool from the description alone</li>
+            <li>The model is invoked only at genuine judgment points; everything else is deterministic code</li>
+            <li>Every loop has an iteration cap and explicit stop conditions</li>
+            <li>State lives in external, serializable storage, not only in the model's context</li>
+            <li>The system can resume cleanly after a crash by reloading saved state</li>
+            <li>Each agent has one narrow job; multi-step tasks compose several narrow agents under one orchestrator</li>
+            <li>Sub-agents report back to an orchestrator rather than coordinating peer-to-peer</li>
+            <li>Human handoff is a designed path with sufficient context, not a last resort</li>
+            <li>Every model call and tool invocation is logged for replay</li>
+            <li>A regression eval set exists and runs on every prompt/model change</li>
+            <li>Tool permissions are scoped to least privilege, and retrieved content is treated as untrusted input</li>
+            <li>Token/cost budget is a stated constraint on the design, not discovered after the bill arrives</li>
+          </ul>
+          <p>A production agent, reduced to essentials, is deterministic software that calls a language model at a few deliberate points, nothing more mystical than that. The engineering work is in choosing those points well, and holding the line on everything else.</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/pulse/building-ai-agents-survive-production-paulo-rebelo-vukkc/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="foot-name">Paulo Rebelo</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="https://phfrebelo.github.io/">Back to portfolio</a>
+      <a href="https://www.linkedin.com/in/paulo-henrique-fonseca-rebelo" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
