@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Articles by Paulo Rebelo — the full text of recent LinkedIn posts on FedRAMP and AI governance, decision velocity, and AI and technical leadership." />
+<link rel="icon" href="data:," />
+<title>Paulo Rebelo — Articles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f3f4f1;
+    --bg-card:#ffffff;
+    --ink:#131816;
+    --ink-2:#3d4742;
+    --ink-3:#6b7771;
+    --line:#dde2dd;
+    --line-strong:#b9c2ba;
+    --accent:#0b5a4a;
+    --accent-ink:#ffffff;
+    --accent-soft:#e6f0ec;
+    --shadow:0 1px 2px rgba(19,24,22,.05),0 12px 32px rgba(19,24,22,.06);
+    --radius:10px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#101312;
+      --bg-soft:#171b19;
+      --bg-card:#171b19;
+      --ink:#eef1ee;
+      --ink-2:#c3ccc6;
+      --ink-3:#8f9b93;
+      --line:#2a322d;
+      --line-strong:#3d4740;
+      --accent:#5ec9ae;
+      --accent-ink:#0b1713;
+      --accent-soft:#1c2f29;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,Segoe UI,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{text-decoration-thickness:2px}
+  ::selection{background:var(--accent);color:var(--accent-ink)}
+
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  @media(max-width:560px){.wrap{padding:0 18px}}
+
+  /* Nav */
+  .topnav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topnav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:58px}
+  .brand{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap;padding:10px 0}
+  .brand span{color:var(--accent)}
+  .backlink{display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);text-decoration:none;font-size:.86rem;font-weight:500;padding:10px 10px;min-height:44px;border-radius:6px}
+  .backlink:hover{color:var(--ink);background:var(--bg-soft)}
+  .backlink svg{width:15px;height:15px;flex:none}
+  @media(max-width:760px){
+    .topnav-inner{flex-direction:column;align-items:flex-start;gap:0;padding-top:8px;padding-bottom:8px;min-height:0}
+    .brand{font-size:.78rem;padding:6px 0 2px}
+    .backlink{margin-left:-10px;padding:8px 10px;font-size:.82rem;min-height:40px}
+  }
+
+  /* Page header */
+  .page-head{padding:64px 0 0}
+  @media(max-width:640px){.page-head{padding:40px 0 0}}
+  .page-head h1{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:clamp(2.6rem,6.2vw,4.2rem);line-height:1.02;letter-spacing:-.015em;margin:0 0 14px}
+  .page-head h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .page-lede{font-size:clamp(1.05rem,2vw,1.22rem);line-height:1.55;color:var(--ink-2);max-width:44em;margin:0}
+  .head-rule{border-top:2px solid var(--ink);margin-top:44px}
+
+  /* Articles */
+  .articles{padding:44px 0 76px}
+  .article{border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-card);box-shadow:var(--shadow);margin-bottom:22px;overflow:hidden}
+  .article-body{padding:30px 32px 28px}
+  @media(max-width:640px){.article-body{padding:22px 20px 20px}}
+  .article-kicker{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:4px 8px}
+  .article-date{font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .article-text{max-width:44em}
+  .article-text p{margin:0 0 16px;color:var(--ink);font-size:1.02rem;line-height:1.7}
+  .article-text p:last-child{margin-bottom:0}
+  .article-text p.hashtags{color:var(--accent);font-weight:500}
+  .article-foot{border-top:1px dashed var(--line-strong);margin-top:24px;padding-top:20px}
+  .linkedin-link{display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:12px 20px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);transition:background .15s ease,color .15s ease}
+  .linkedin-link:hover{background:color-mix(in srgb,var(--accent) 88%, black);color:var(--accent-ink)}
+  @media(prefers-color-scheme:dark){.linkedin-link:hover{background:color-mix(in srgb,var(--accent) 88%, white)}}
+  .linkedin-link svg{width:16px;height:16px;flex:none}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:28px 0 44px}
+  .foot-inner{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+  .foot-name{font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .foot-links{display:flex;flex-wrap:wrap;gap:4px}
+  .foot-links a{color:var(--ink-2);text-decoration:none;font-size:.86rem;font-weight:500;padding:10px;min-height:44px;display:inline-flex;align-items:center;border-radius:6px}
+  .foot-links a:hover{color:var(--ink);background:var(--bg-soft)}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="brand" href="https://phfrebelo.github.io/">Paulo <span>Rebelo</span></a>
+    <a class="backlink" href="https://phfrebelo.github.io/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Back to portfolio
+    </a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Articles</h1>
+    <p class="page-lede">Writing from my LinkedIn — the full text of my recent posts, with a link to each one on LinkedIn.</p>
+    <div class="head-rule"></div>
+  </div>
+
+  <div class="articles">
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">FedRAMP &amp; AI governance</span>
+          <span class="article-date">November 24, 2026</span>
+        </div>
+        <div class="article-text">
+          <p>FedRAMP taught me something most AI teams are about to learn the hard way: authorization is not a gate at the end. It is a program that runs alongside delivery.</p>
+          <p>At Trellix, I owned the certification and compliance programs, FedRAMP, DoD, IPv6, that gated over $400M in federal revenue. No authorization, no bid. The lesson was not about paperwork. It was that a control designed in from the start costs a fraction of one retrofitted after the build, when the architecture is already set and the answers are expensive.</p>
+          <p>The same pattern is showing up in AI now. Teams ship the model, then discover the governance questions: what data trained it, who can see the outputs, what happens when it fails inside a regulated environment. By then, the rework is the project.</p>
+          <p>In the agentic SDLC work I lead now, we are building it the other way around. Human gates are built into the harness, not written in a prompt. The checkpoint is part of the workflow, not a meeting after it.</p>
+          <p>The teams that win in regulated AI will not be the ones that move fastest. They will be the ones whose governance moves at the same speed as their delivery.</p>
+          <p class="hashtags">#TechnicalProgramManagement #AIGovernance #FedRAMP #AgenticAI</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7531025595229425664/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">Decision velocity</span>
+          <span class="article-date">November 18, 2026</span>
+        </div>
+        <div class="article-text">
+          <p>Speed in program delivery isn't about working faster. It's about deciding faster.</p>
+          <p>I stood up a portfolio command center in hours — not because I rushed, but because every decision had an owner, a date, and a single log to live in.</p>
+          <p>Decisions didn't wait for the next steering committee. They were made, logged, and moved on.</p>
+          <p>That log is a repo, not a slide deck. Thirteen folders: command center, RAID, decisions, roadmap, stakeholders, delivery model, policies. Every decision, action, and open question lives in exactly one place — and an AI agent helps me keep it that way.</p>
+          <p>Last week alone I sent 2,600 requests to Claude from VS Code — 21.8 active hours across 6 days, 90% cache reuse. The agent drafts, I decide.</p>
+          <p>The programs that stall aren't short on effort. They're short on decision velocity. Where do decisions go to wait in your organization?</p>
+          <p class="hashtags">#TechnicalProgramManagement #AgenticAI #ProgramManagement #ClaudeCode</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7528850363781894144/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-body">
+        <div class="article-kicker">
+          <span class="tag">AI and technical leadership</span>
+          <span class="article-date">October 28, 2026</span>
+        </div>
+        <div class="article-text">
+          <p>AI is raising the bar for technical leadership. People management alone is no longer enough.<br>
+          An article featuring Airbnb CEO Brian Chesky makes a timely argument: leaders need to stay directly connected to the work, and professionals need to keep adapting.</p>
+          <p>My takeaway for TPM Leaders, Heads of PMO, and Engineering Leads: technical fluency should be a core leadership competency.</p>
+          <p>People leadership remains essential. Empathy, coaching, and trust help teams succeed. Technical depth strengthens that leadership by helping us ask better questions, challenge assumptions, and make informed decisions.</p>
+          <p>What does that look like in practice?</p>
+          <p>• TPM Leaders: Understand architecture, APIs, data flows, and dependencies well enough to identify risks that a green status report can hide.<br>
+          • Heads of PMO: Connect investment and governance decisions to technical feasibility, AI readiness, and measurable business outcomes.<br>
+          • Engineering Leads: Stay close to design decisions, code quality, reliability, and the evaluation of AI-generated work.</p>
+          <p>The depth will differ by role. Every leader should understand enough to engage meaningfully with the decisions their teams face.</p>
+          <p>For AI initiatives, that means being able to ask:<br>
+          — How will we know the output is trustworthy?<br>
+          — What data can the system access?<br>
+          — What happens when it fails?<br>
+          — Where is human review necessary?<br>
+          — Does the benefit justify the cost and complexity?</p>
+          <p>It also means using the tools ourselves: experimenting, building small prototypes, and learning where AI helps and where it struggles.</p>
+          <p>My view: the strongest leaders will combine people leadership, technical judgment, and business accountability.</p>
+          <p>As our teams adopt AI, our own learning needs to keep pace.</p>
+          <p>How are you staying technically engaged as a leader?</p>
+          <p class="hashtags">#TechnicalLeadership #TechnicalProgramManagement #PMO #EngineeringLeadership #AI</p>
+        </div>
+        <div class="article-foot">
+          <a class="linkedin-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7521346920829796352/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            Read on LinkedIn
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="foot-name">Paulo Rebelo</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="https://phfrebelo.github.io/">Back to portfolio</a>
+      <a href="https://www.linkedin.com/in/paulo-henrique-fonseca-rebelo" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
